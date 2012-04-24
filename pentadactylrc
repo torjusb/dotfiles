@@ -1,0 +1,61 @@
+" Styles
+highlight StatusLine -moz-appearance: none !important; font-weight: bold; background: transparent !important; border: 0px !important; min-height: 22px !important; text-shadow: none !important; font: normal 1px/1 'Monaco' !important; padding: 3px 0px 3px 5px !important; border-top: 1px solid #000;
+highlight StatusLineNormal   background: #ccc;
+highlight CmdLine    padding: 1px !important; font: normal 12px 'Monaco' !important;
+highlight CmdOutput  font: normal 12px 'Monaco' !important;
+highlight CompItem   font: normal 12px 'Monaco' !important;
+
+highlight Find   background: #d6c149; color: #000;
+
+" Hints
+hi Hint               text-transform: uppercase; font-family : "Helvetica Neue", "Helvetica", "Arial", "Sans"; font-weight: bold; font-size: 11px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); color: #302505; padding: 1px 3px 0px 3px; background: -moz-linear-gradient(top, rgba(255, 247, 133, .9), rgba(255, 197, 66, .9)); border: 1px #C38A22 solid; -moz-border-radius: 3px; -moz-box-shadow: 0 3px 7px 0px rgba(0,0,0,0.3); margin-left: -10px;
+hi HintElem           background-color: inherit !important
+hi HintActive	      background-color: inherit !important
+hi HintImage          opacity: .5 !important;
+
+set runtimepath=/Users/torjus/.pentadactyl
+set editor='/usr/local/bin/mvim -f +<line> <file>'
+set followhints=1
+set showtabline=multitab
+set showstatuslinks=command
+
+set mapleader=','
+
+" Allow to set focus on inputs. So `T` works on e.g. github.com
+set sf=*:laissez-faire
+
+" FASTER PLEASE
+nnoremap j 3j
+nnoremap k 3k
+
+" I never use marks, but always use quickmarks.
+nnoremap "'" go
+nnoremap '"' gn
+
+" Switch tabs with parens
+nnoremap ) :tn<CR>
+nnoremap ( :tp<CR>
+
+" Finally I can overwrite the stupid fucking Firebug toggling correctly.
+" nnoremap <c-f> <f12>
+" nnoremap <c-g> <s-f12>
+
+" Console toggle
+nnoremap <c-g> <m-a-k><esc>
+inoremap <c-g> <esc><m-a-k><esc>
+
+" Inspect element toggle
+nnoremap <c-f> <m-a-i>
+inoremap <c-f> <esc><m-a-i>
+
+" YES YES YES REMOVE THE IDIOCY
+nnoremap <bs> <nop>
+
+" Highlight all search matches, not just the first.
+set hlfind
+
+" Clear search highlighting and normal highlighting.
+nnoremap <Leader><space> <esc>:noh<CR>
+
+" Shut up.
+javascript dactyl.beep = function() { return false; }

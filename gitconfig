@@ -1,0 +1,22 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status -sb
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	prune-local = !git branch --merged | grep -v \"^\\*\" | xargs git branch -d
+
+[color]
+	ui = auto
+
+[core]
+	editor = vi
+
+[push]
+	default = tracking
+
+[user]
+	name = Torjus Bjåen
+	email = torjus.bjaen@gmail.com

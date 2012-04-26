@@ -4,6 +4,9 @@ set nocompatible
 syntax on
 colorscheme Tomorrow-Night
 
+" Phatogen
+call pathogen#infect()
+
 set number
 set guifont=Menlo:h14
 set enc=utf8

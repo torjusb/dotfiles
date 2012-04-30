@@ -1,5 +1,5 @@
 " Styles
-highlight StatusLine -moz-appearance: none !important; font-weight: bold; background: transparent !important; border: 0px !important; min-height: 22px !important; text-shadow: none !important; font: normal 1px/1 'Monaco' !important; padding: 3px 0px 3px 5px !important; border-top: 1px solid #000;
+highlight StatusLine -moz-appearance: none !important; font-weight: bold; background: transparent !important; border: 0px !important; min-height: 22px !important; text-shadow: none !important; font: normal 12px/1 'Monaco' !important; padding: 3px 0px 3px 5px !important; border-top: 1px solid #000;
 highlight StatusLineNormal   background: #ccc;
 highlight CmdLine    padding: 1px !important; font: normal 12px 'Monaco' !important;
 highlight CmdOutput  font: normal 12px 'Monaco' !important;

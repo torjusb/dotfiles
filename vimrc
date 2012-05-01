@@ -8,7 +8,7 @@ colorscheme Tomorrow-Night
 call pathogen#infect()
 
 set number
-set guifont=Menlo:h14
+set guifont=Monaco:h14
 set enc=utf8
 set tabstop=4
 set shiftwidth=4
@@ -35,6 +35,9 @@ hi StatusLineNC guifg=#808080 guibg=#080808
 
 "Exit insert mode with jj
 inoremap jj <ESC>
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
 
 " Source the vimrc file after saving it
 if has("autocmd")

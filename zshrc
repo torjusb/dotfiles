@@ -43,3 +43,5 @@ source "$OMZ/init.zsh"
 
 # Customize to your needs...
 
+# Auto complete / after ..
+zstyle ':completion:*' special-dirs true

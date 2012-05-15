@@ -10,9 +10,6 @@ call pathogen#infect()
 set number
 set guifont=Monaco:h14
 set enc=utf8
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set smartindent
 set autoindent
 set ruler
@@ -22,16 +19,17 @@ set ignorecase
 set smartcase
 set go-=T
 set mouse=a
+set colorcolumn=80
+
+" Tabs, spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Show hidden characters
 set list
 set listchars=tab:▸\ ,eol:¬
-
-" Color status bar of current split
-hi StatusLine guifg=#CD5907 guibg=fg
-hi StatusLineNC guifg=#808080 guibg=#080808
-
-"hi Normal ctermbg=black ctermfg=080808
 
 "Exit insert mode with jj
 inoremap jj <ESC>

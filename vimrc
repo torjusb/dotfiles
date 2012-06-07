@@ -31,7 +31,7 @@ set expandtab
 set list
 set listchars=tab:▸\ ,eol:¬
 
-"Exit insert mode with jj
+" Exit insert mode with jj
 inoremap jj <ESC>
 
 " Powerline

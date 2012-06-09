@@ -6,6 +6,7 @@ colorscheme Tomorrow-Night
 
 " Phatogen
 call pathogen#infect()
+call pathogen#helptags() " Make :help work for bundles
 
 set number
 set guifont=Monaco:h14

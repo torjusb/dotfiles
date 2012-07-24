@@ -22,7 +22,7 @@ set showstatuslinks=command
 " Home row is faster
 set hintkeys=asdfglkjh
 
-set mapleader=','
+map , <Leader>
 
 " Allow to set focus on inputs. So `T` works on e.g. github.com
 set sf=*:laissez-faire

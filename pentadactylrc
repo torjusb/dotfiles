@@ -16,7 +16,6 @@ hi HintImage          opacity: .5 !important;
 set runtimepath=/Users/torjus/.pentadactyl
 set editor='/usr/local/bin/mvim -f +<line> <file>'
 set followhints=1
-set showtabline=multitab
 set showstatuslinks=command
 
 " Home row is faster
@@ -28,37 +27,37 @@ map , <Leader>
 set sf=*:laissez-faire
 
 " FASTER PLEASE
-nnoremap j 3j
-nnoremap k 3k
+nmap -builtin j 3j
+nmap -builtin k 3k
 
 " I never use marks, but always use quickmarks.
-nnoremap "'" go
-nnoremap '"' gn
+nmap -builtin "'" go
+nmap -builtin '"' gn
 
 " Switch tabs with parens
-nnoremap ) :tn<CR>
-nnoremap ( :tp<CR>
+nmap -builtin ) :tn<CR>
+nmap -builtin ( :tp<CR>
 
 " Finally I can overwrite the stupid fucking Firebug toggling correctly.
 " nnoremap <c-f> <f12>
 " nnoremap <c-g> <s-f12>
 
 " Console toggle
-nnoremap <c-g> <m-a-k><esc>
-inoremap <c-g> <esc><m-a-k><esc>
+nmap -builtin <c-g> <m-a-k><esc>
+imap -builtin <c-g> <esc><m-a-k><esc>
 
 " Inspect element toggle
-nnoremap <c-f> <m-a-i>
-inoremap <c-f> <esc><m-a-i>
+nmap -builtin <c-f> <m-a-i>
+imap -builtin <c-f> <esc><m-a-i>
 
 " YES YES YES REMOVE THE IDIOCY
-nnoremap <bs> <nop>
+nmap -builtin <bs> <nop>
 
 " Highlight all search matches, not just the first.
 set hlfind
 
 " Clear search highlighting and normal highlighting.
-nnoremap <Leader><space> <esc>:noh<CR>
+nmap <Leader><space> <esc>:noh<CR>
 
 " Shut up.
 javascript dactyl.beep = function() { return false; }

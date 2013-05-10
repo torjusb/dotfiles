@@ -1,0 +1,8 @@
+package "php5-fpm" do
+    action :install
+end
+
+file "/etc/nginx/php.conf" do
+    source "php.conf.erb"
+    action :create
+end

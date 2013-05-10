@@ -5,10 +5,19 @@ function ensure_link {
 	    test -L "$HOME/$2" || ln -s "$HOME/$1" "$HOME/$2"
 }
 
+# Vim
 ensure_link "Development/dotfiles/vim"           ".vim"
 ensure_link "Development/dotfiles/vimrc"         ".vimrc"
-ensure_link "Development/dotfiles/zshrc"         ".zshrc"
+
+# Zsh & Prezto
+ensure_link "Development/dotfiles/zsh/zshrc"     ".zshrc"
+ensure_link "Development/dotfiles/zsh/zlogin"    ".zlogin"
+ensure_link "Development/dotfiles/zsh/zpreztorc" ".zpreztorc"
+
+# Git
 ensure_link "Development/dotfiles/gitconfig"     ".gitconfig"
+
+# Pentadactyl
 ensure_link "Development/dotfiles/pentadactyl"   ".pentadactyl"
 ensure_link "Development/dotfiles/pentadactylrc" ".pentadactylrc"
 

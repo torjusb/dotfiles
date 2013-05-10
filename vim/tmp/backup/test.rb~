@@ -1,0 +1,30 @@
+require "highline/import"
+
+class HighLine
+    alias_method :orig_ask, :ask
+
+    def ask(question, answer_type = String, &details)
+        question = "<%= color('#{question}', :green) %>: "
+        orig_ask(question, answer_type = String, &details)
+    end
+
+    class Question
+        def append_default
+            default = "[<%= color('#{@default}', :yellow) %>]"
+            if @question =~ /(.+):([\t ]+)\Z/
+                @question = "#{$1} #{default}:#{$2}"
+            else
+                @question << default
+            end
+        end
+    end
+end
+
+site_name = HighLine.new.ask("Enter sitename") do |q|
+    q.validate = /[a-z_]/
+end
+host_name = HighLine.new.ask("Enter hostname") do |q|
+    q.default="#{site_name}.no"
+end
+
+puts "Site name: #{site_name}, Host name: #{host_name}"

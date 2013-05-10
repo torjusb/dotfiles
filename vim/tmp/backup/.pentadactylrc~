@@ -59,8 +59,5 @@ set hlfind
 " Clear search highlighting and normal highlighting.
 nmap <Leader><space> <esc>:noh<CR>
 
-" Don't close the last tab on `d`
-set! browser.tabs.closeWindowWithLastTab=false
-
 " Shut up.
 javascript dactyl.beep = function() { return false; }

@@ -31,7 +31,7 @@ zstyle ':omz:module:terminal' auto-title 'yes'
 
 # Set the Oh My Zsh modules to load (browse modules).
 zstyle ':omz:load' omodule 'environment' 'terminal' 'editor' 'completion' \
-  'history' 'directory' 'spectrum' 'alias' 'utility' 'prompt' 'git' \
+  'history' 'directory' 'spectrum' 'utility' 'prompt' 'git' \
   'syntax-highlighting' 'history-substring-search' 'z'
 
 # Set the prompt theme to load.
@@ -43,6 +43,9 @@ zstyle ':omz:module:prompt' theme 'sorin'
 source "$OMZ/init.zsh"
 
 # Customize to your needs...
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Auto complete / after ..
 zstyle ':completion:*' special-dirs true

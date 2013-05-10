@@ -11,7 +11,8 @@ call pathogen#helptags() " Make :help work for bundles
 " Leader
 let mapleader = ","
 
-set guifont=Menlo\ for\ Powerline:h12
+set number
+set guifont=Monaco\ for\ Powerline:h12
 set enc=utf8
 set smartindent
 set autoindent
@@ -24,15 +25,16 @@ set go-=T
 set mouse=a
 set colorcolumn=80
 set guioptions-=rL
-set fillchars=diff:⣿,vert:│
-set listchars=tab:▸\ ,eol:¬
-set backspace=indent,eol,start
 
 " Tabs, spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+" Show hidden characters
+"set list
+set listchars=tab:▸\ ,eol:¬
 
 " Natural split opening positions
 set splitbelow
@@ -45,15 +47,9 @@ inoremap jj <ESC>
 nmap ø <C-]>
 
 " Additional colors
-hi VertSplit        guibg=#252525 guifg=#5D6268 ctermbg=234 ctermfg=8
-hi LineNr           guibg=#252525 guifg=#5D6268 ctermbg=234 ctermfg=7
-hi ColorColumn      guibg=gray17                ctermbg=8
-hi SyntasticErrorSign                                       ctermfg=160
-hi SyntasticWarningSign                                     ctermfg=226
-
-" Syntastic
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+hi VertSplit        guibg=gray17 guifg=gray17 ctermbg=8 ctermfg=8
+hi LineNr           guibg=gray15              ctermbg=0 ctermfg=7
+hi ColorColumn      guibg=gray17              ctermbg=8
 
 " Tabs
 nnoremap ( :tabprev<cr>
@@ -65,9 +61,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
 
-let NERDTreeMinimalUI = 1
-let NERDTreeChDirMode = 2
-
 " Toggle line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 
@@ -75,10 +68,10 @@ nmap <C-N><C-N> :set invnumber<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" Timeouts
-set timeoutlen=350
-set ttimeout
-set ttimeoutlen=100
+" PHP DocBlock
+"au BufRead,BufNewFile *.php inoremap <leader>p :call PhpDoc()<CR>
+"au BufRead,BufNewFile *.php nnoremap <leader>p :PhpDoc()<CR>
+"au BufRead,BufNewFile *.php vnoremap <leader>p :call PhpDocRange()<CR>
 
 " Completion {{{
 
@@ -104,19 +97,30 @@ set wildignore+=*.orig " Merge resolution files
 set undodir=~/.vim/tmp/undo// " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap// " swap files
+set backup " enable backups
 set noswapfile " It's 2012, Vim.
-" Vagrant NFS shared folder doesn't like it?!
-"set backup " enable backups
 
 " }}}
 
-" Cursorline {{{
-" Only show cursorline in the current window and in normal mode.
+" Source the vimrc file after saving it
+if has("autocmd")
+"  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
-augroup cline
-    au!
-    au WinLeave,InsertEnter * set nocursorline
-    au WinEnter,InsertLeave * set cursorline
-augroup END
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
 
-" }}}
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart(' ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+

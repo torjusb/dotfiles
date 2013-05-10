@@ -20,3 +20,5 @@
 [user]
 	name = Torjus Bjåen
 	email = torjus.bjaen@gmail.com
+[diff]
+	algorithm = patience

@@ -1,0 +1,67 @@
+<?php
+
+namespace Acme\TestBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller,
+    Acme\TestBundle\Entity\Location,
+    Symfony\Component\HttpFoundation\Response;
+
+class LocationController extends Controller
+{
+    public function indexAction()
+    {
+        $locations = $this->get('doctrine')
+                          ->getRepository('AcmeTestBundle:Location')
+                          ->findAll();
+
+        $map = array_map(function ($n) {
+            return array(
+                'adderss' => $n->getAddress(),
+                'lat' => $n->getLatitude(),
+                'lng' => $n->getLongitude(),
+            );
+        }, $locations);
+
+        return $this->render('AcmeTestBundle:Default:index.html.twig',
+            array('locations' => $map));
+    }
+
+    public function addAction()
+    {
+        $request = $this->getRequest();
+
+        $browser = $this->container->get('buzz.browser');
+
+        $requestAddress = urlencode($request->request->get('address'));
+        $response = $browser->get("http://maps.googleapis.com/maps/api/geocode/json?address={$requestAddress}&sensor=false");
+        $result = json_decode($response->getContent());
+
+        unset($browser, $requestAddress);
+
+        if ('OK' === $result->status) {
+            $result = $result->results[0];
+
+            $address = $result->formatted_address;
+            $lat = $result->geometry->location->lat;
+            $lng = $result->geometry->location->lng;
+
+            $location = new Location();
+            $location->setAddress($address)
+                     ->setLatitude($lat)
+                     ->setLongitude($lng);
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($location);
+            $em->flush();
+
+            $request->getSession()->setFlash(
+                'success', sprintf('The location %s was added', $location->getAddress()));
+
+            return $this->redirect($this->generateUrl('AcmeTestBundle_index'));
+        } elseif ('ZERO_RESULTS' === $result->status) {
+            throw new \Exception("Address can't be located");
+        } elseif ('REQUEST_DENIED' === $result->status) {
+            throw new \Exception("Comminucation with Google APIs failed");
+        }
+    }
+}

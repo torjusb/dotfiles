@@ -4,6 +4,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/vim-twig"]
 	path = vim/bundle/vim-twig
 	url = https://github.com/beyondwords/vim-twig.git
@@ -34,12 +37,3 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/powerline.git
-[submodule "vim/bundle/vitality.vim"]
-	path = vim/bundle/vitality.vim
-	url = https://github.com/sjl/vitality.vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git

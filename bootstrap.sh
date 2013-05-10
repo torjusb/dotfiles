@@ -15,7 +15,7 @@ ensure_link "Development/dotfiles/zsh/zlogin"    ".zlogin"
 ensure_link "Development/dotfiles/zsh/zpreztorc" ".zpreztorc"
 
 # Git
-ensure_link "Development/dotfiles/gitconfig"     ".gitconfig"
+ensure_link "Development/dotfiles/git/gitconfig" ".gitconfig"
 
 # Pentadactyl
 ensure_link "Development/dotfiles/pentadactyl"   ".pentadactyl"

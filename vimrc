@@ -85,11 +85,18 @@ set ttimeoutlen=100
 
 " Completion {{{
 
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+let g:SuperTabDefaultCompletionType="context"
+
+augroup php
+    au!
+
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType php call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+augroup end
 
 set wildmenu
-set wildmode=list:longest
-set completeopt=menu
+set wildmode=longest,list,full
+set completeopt=longest,menu
 
 set wildignore+=.hg,.git,.svn " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images

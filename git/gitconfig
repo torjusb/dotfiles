@@ -1,7 +1,7 @@
 [alias]
 	co = checkout
 	br = branch
-	ci = commit
+	ci = commit -v
 	st = status -sb
 	unstage = reset HEAD --
 	last = log -1 HEAD

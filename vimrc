@@ -68,6 +68,9 @@ nnoremap <leader>t :NERDTreeToggle<cr>
 let NERDTreeMinimalUI = 1
 let NERDTreeChDirMode = 2
 
+" Tagbar
+nnoremap <leader>s :TagbarToggle<CR>
+
 " Toggle line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 

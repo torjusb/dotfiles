@@ -27,6 +27,7 @@ set guioptions-=rL
 set fillchars=diff:⣿,vert:│
 set listchars=tab:▸\ ,eol:¬
 set backspace=indent,eol,start
+set clipboard=unnamed
 
 " Tabs, spaces
 set tabstop=4
@@ -46,7 +47,7 @@ nmap ø <C-]>
 
 " Additional colors
 hi VertSplit        guibg=#252525 guifg=#5D6268 ctermbg=234 ctermfg=8
-hi LineNr           guibg=#252525 guifg=#5D6268 ctermbg=234 ctermfg=7
+hi LineNr           guibg=#252525 guifg=#5D6268             ctermfg=240
 hi ColorColumn      guibg=gray17                ctermbg=8
 hi SyntasticErrorSign                                       ctermfg=160
 hi SyntasticWarningSign                                     ctermfg=226
@@ -60,7 +61,7 @@ nnoremap ( :tabprev<cr>
 nnoremap ) :tabnext<cr>
 
 " Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
@@ -79,9 +80,9 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Timeouts
-set timeoutlen=350
-set ttimeout
-set ttimeoutlen=100
+"set timeoutlen=350
+"set ttimeout
+"set ttimeoutlen=100
 
 " Completion {{{
 

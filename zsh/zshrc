@@ -1,3 +1,6 @@
+export PYTHONPATH="$HOME/.config/powerline"
+export PATH="$HOME/bin:$PATH"
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -7,6 +10,17 @@ fi
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:/usr/local/lib/python2.7/site-packages:/usr/local/share/python"
 export PATH="$PATH:/usr/local/heroku/bin"
+
+# Give detailed report for all commands taking more than 5 seconds
+export REPORTTIME=5
+export TIMEFMT='
+> %J
+
+  | Time:   [38;5;159m%E[0m total time, %U user time, %S kernel time
+  | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)
+  | System: [38;5;159m%P[0m CPU used, [38;5;159m%M[0m KB max memory used'
+
+autoload -U colors && colors
 
 # LESS: Find result 4 lines from top
 alias less="less -j 4"

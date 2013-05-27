@@ -21,3 +21,6 @@ ensure_link "Development/dotfiles/git/gitconfig" ".gitconfig"
 ensure_link "Development/dotfiles/pentadactyl"   ".pentadactyl"
 ensure_link "Development/dotfiles/pentadactylrc" ".pentadactylrc"
 
+# Tmux
+ensure_link "Development/dotfiles/tmux.conf"     ".tmux.conf"
+

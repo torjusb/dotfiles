@@ -1,5 +1,5 @@
 export PYTHONPATH="$HOME/.config/powerline"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/Development/dotfiles/bin:$PATH"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

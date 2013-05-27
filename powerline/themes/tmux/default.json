@@ -1,0 +1,30 @@
+{
+	"default_module": "powerline.segments.common",
+	"segment_data": {
+		"uptime": {
+			"before": "∞ "
+		},
+        "spotify": {
+            "before": "♫ "
+        }
+	},
+	"segments": {
+		"right": [
+			{
+				"name": "uptime",
+				"priority": 50
+			},
+			{
+				"name": "date",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+            {
+                "name": "spotify",
+                "module": "spotify.spotify"
+            }
+		]
+	}
+}

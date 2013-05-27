@@ -1,0 +1,10 @@
+{
+	"name": "Default color scheme for terminal prompts",
+	"groups": {
+		"background:divider": { "fg": "gray5", "bg": "gray0" },
+		"time": { "fg": "gray10", "bg": "gray2" },
+		"time:divider": { "fg": "gray5", "bg": "gray2" },
+		"uptime": { "fg": "gray8", "bg": "gray1" },
+		"spotify": { "fg": "darkestgreen", "bg": "brightgreen", "attr": ["bold"] }
+	}
+}

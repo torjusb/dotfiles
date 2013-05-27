@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+SPOTIFY_TRACK=$(osascript <<EOF
+    if application "Spotify" is running then
+        tell application "Spotify"
+            set theTrack to name of the current track
+            set theArtist to artist of the current track
+
+            theArtist & " - " & theTrack
+        end tell
+    end if
+EOF)
+
+echo $SPOTIFY_TRACK

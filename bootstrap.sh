@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p ~/.config
+
 # From https://github.com/sjl/dotfiles/blob/master/bin/bootstrap.sh
 function ensure_link {
 	    test -L "$HOME/$2" || ln -s "$HOME/$1" "$HOME/$2"
@@ -24,3 +26,5 @@ ensure_link "Development/dotfiles/pentadactylrc" ".pentadactylrc"
 # Tmux
 ensure_link "Development/dotfiles/tmux.conf"     ".tmux.conf"
 
+# Powerline
+ensure_link "Development/dotfiles/powerline"     ".config/powerline"

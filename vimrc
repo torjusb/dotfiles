@@ -53,8 +53,8 @@ hi SyntasticErrorSign                                       ctermfg=160
 hi SyntasticWarningSign                                     ctermfg=226
 
 " Syntastic
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='X'
+let g:syntastic_warning_symbol='!'
 
 " Tabs
 nnoremap ( :tabprev<cr>

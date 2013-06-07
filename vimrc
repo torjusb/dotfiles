@@ -27,7 +27,6 @@ set guioptions-=rL
 set fillchars=diff:⣿,vert:│
 set listchars=tab:▸\ ,eol:¬
 set backspace=indent,eol,start
-set clipboard=unnamed
 
 " Tabs, spaces
 set tabstop=4
@@ -38,6 +37,10 @@ set expandtab
 " Natural split opening positions
 set splitbelow
 set splitright
+
+" Shortcut to system clipboard
+nnoremap <leader>c "*
+vnoremap <leader>c "*y<CR>
 
 " Exit insert mode with jj
 inoremap jj <ESC>

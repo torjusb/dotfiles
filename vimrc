@@ -87,6 +87,13 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
+augroup gitcommit
+    au!
+
+    set spell
+    set textwidth=80
+augroup end
+
 " Completion {{{
 
 let g:SuperTabDefaultCompletionType="context"

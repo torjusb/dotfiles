@@ -154,6 +154,22 @@ else
     let s:gutter = 'blackgravel'
 endif
 
+if exists('g:badwolf_tabline')
+    if g:badwolf_tabline == 0
+        let s:tabline = 'blackestgravel'
+    elseif  g:badwolf_tabline == 1
+        let s:tabline = 'blackgravel'
+    elseif  g:badwolf_tabline == 2
+        let s:tabline = 'darkgravel'
+    elseif  g:badwolf_tabline == 3
+        let s:tabline = 'deepgravel'
+    else
+        let s:tabline = 'blackestgravel'
+    endif
+else
+    let s:tabline = 'blackgravel'
+endif
+
 " }}}
 
 " Actual colorscheme ----------------------------------------------------------
@@ -170,6 +186,10 @@ call s:HL('VertSplit', 'lightgravel', 'bg', 'none')
 call s:HL('CursorLine',   '', 'darkgravel', 'none')
 call s:HL('CursorColumn', '', 'darkgravel')
 call s:HL('ColorColumn',  '', 'darkgravel')
+
+call s:HL('TabLine', 'plain', s:tabline, 'none')
+call s:HL('TabLineFill', 'plain', s:tabline, 'none')
+call s:HL('TabLineSel', 'coal', 'tardis', 'none')
 
 call s:HL('MatchParen', 'dalespale', 'darkgravel', 'bold')
 
@@ -359,7 +379,11 @@ call s:HL('EasyMotionShade',  'deepgravel', 'bg')
 " from my Vimrc.
 call s:HL('InterestingWord1', 'coal', 'orange')
 call s:HL('InterestingWord2', 'coal', 'lime')
-call s:HL('InterestingWord3', 'coal', 'taffy')
+call s:HL('InterestingWord3', 'coal', 'saltwatertaffy')
+call s:HL('InterestingWord4', 'coal', 'toffee')
+call s:HL('InterestingWord5', 'coal', 'dress')
+call s:HL('InterestingWord6', 'coal', 'taffy')
+
 
 " }}}
 " Makegreen {{{
@@ -476,9 +500,42 @@ call s:HL('javaDocTags', 'snow', '', 'none')
 call s:HL('javaDocParam', 'dalespale', '', '')
 
 " }}}
+" LaTeX {{{
+
+call s:HL('texStatement', 'tardis', '', 'none')
+call s:HL('texMathZoneX', 'orange', '', 'none')
+call s:HL('texMathZoneA', 'orange', '', 'none')
+call s:HL('texMathZoneB', 'orange', '', 'none')
+call s:HL('texMathZoneC', 'orange', '', 'none')
+call s:HL('texMathZoneD', 'orange', '', 'none')
+call s:HL('texMathZoneE', 'orange', '', 'none')
+call s:HL('texMathZoneV', 'orange', '', 'none')
+call s:HL('texMathZoneX', 'orange', '', 'none')
+call s:HL('texMath', 'orange', '', 'none')
+call s:HL('texMathMatcher', 'orange', '', 'none')
+call s:HL('texRefLabel', 'dirtyblonde', '', 'none')
+call s:HL('texRefZone', 'lime', '', 'none')
+call s:HL('texComment', 'darkroast', '', 'none')
+call s:HL('texDelimiter', 'orange', '', 'none')
+call s:HL('texZone', 'brightgravel', '', 'none')
+
+augroup badwolf_tex
+    au!
+
+    au BufRead,BufNewFile *.tex syn region texMathZoneV start="\\(" end="\\)\|%stopzone\>" keepend contains=@texMathZoneGroup
+    au BufRead,BufNewFile *.tex syn region texMathZoneX start="\$" skip="\\\\\|\\\$" end="\$\|%stopzone\>" keepend contains=@texMathZoneGroup
+augroup END
+
+" }}}
 " LessCSS {{{
 
 call s:HL('lessVariable', 'lime', '', 'none')
+
+" }}}
+" Lispyscript {{{
+
+call s:HL('lispyscriptDefMacro', 'lime', '', '')
+call s:HL('lispyscriptRepeat', 'dress', '', 'none')
 
 " }}}
 " Mail {{{

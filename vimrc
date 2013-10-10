@@ -51,7 +51,8 @@ nmap ø <C-]>
 " Additional colors
 hi VertSplit        guibg=#252525 guifg=#5D6268 ctermbg=234 ctermfg=8
 hi LineNr           guibg=#252525 guifg=#5D6268             ctermfg=240
-hi ColorColumn      guibg=gray17                ctermbg=8
+hi ColorColumn      guibg=gray17                ctermbg=232
+hi CursorLine                                   ctermbg=234
 hi SyntasticErrorSign                                       ctermfg=160
 hi SyntasticWarningSign                                     ctermfg=226
 

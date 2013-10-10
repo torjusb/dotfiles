@@ -63,8 +63,6 @@ let g:syntastic_warning_symbol='!'
 nnoremap ( :tabprev<cr>
 nnoremap ) :tabnext<cr>
 
-" Powerline
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>

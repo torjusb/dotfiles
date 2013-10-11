@@ -2,7 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 syntax on
-colorscheme Badwolf
+colorscheme badwolf
 
 " Phatogen
 call pathogen#infect()

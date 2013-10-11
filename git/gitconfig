@@ -13,6 +13,7 @@
 
 [core]
 	editor = vi
+    excludesfile = ~/Development/dotfiles/git/gitignore_global
 
 [push]
 	default = tracking

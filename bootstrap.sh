@@ -1,30 +1,32 @@
-#!/bin/sh
+#!/bin/bash
+
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 mkdir -p ~/.config
 
 # From https://github.com/sjl/dotfiles/blob/master/bin/bootstrap.sh
 function ensure_link {
-	    test -L "$HOME/$2" || ln -s "$HOME/$1" "$HOME/$2"
+	    test -L "$HOME/$2" || ln -s "$DOTFILES_DIR/$1" "$HOME/$2"
 }
 
 # Vim
-ensure_link "Development/dotfiles/vim"           ".vim"
-ensure_link "Development/dotfiles/vimrc"         ".vimrc"
+ensure_link "vim"           ".vim"
+ensure_link "vimrc"         ".vimrc"
 
 # Zsh & Prezto
-ensure_link "Development/dotfiles/zsh/zshrc"     ".zshrc"
-ensure_link "Development/dotfiles/zsh/zlogin"    ".zlogin"
-ensure_link "Development/dotfiles/zsh/zpreztorc" ".zpreztorc"
+ensure_link "zsh/zshrc"     ".zshrc"
+ensure_link "zsh/zlogin"    ".zlogin"
+ensure_link "zsh/zpreztorc" ".zpreztorc"
 
 # Git
-ensure_link "Development/dotfiles/git/gitconfig" ".gitconfig"
+ensure_link "git/gitconfig" ".gitconfig"
 
 # Pentadactyl
-ensure_link "Development/dotfiles/pentadactyl"   ".pentadactyl"
-ensure_link "Development/dotfiles/pentadactylrc" ".pentadactylrc"
+ensure_link "pentadactyl"   ".pentadactyl"
+ensure_link "pentadactylrc" ".pentadactylrc"
 
 # Tmux
-ensure_link "Development/dotfiles/tmux.conf"     ".tmux.conf"
+ensure_link "tmux.conf"     ".tmux.conf"
 
 # Powerline
-ensure_link "Development/dotfiles/powerline"     ".config/powerline"
+ensure_link "powerline"     ".config/powerline"

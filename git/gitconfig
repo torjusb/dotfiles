@@ -1,25 +1,25 @@
 [alias]
-	co = checkout
-	br = branch
-	ci = commit -v
-	st = status -sb
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	prune-local = !git branch --merged | grep -v \"^\\*\" | xargs git branch -d
+    co = checkout
+    br = branch
+    ci = commit -v
+    st = status -sb
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    prune-local = !git branch --merged | grep -v \"^\\*\" | xargs git branch -d
 
 [color]
-	ui = auto
+    ui = auto
 
 [core]
-	editor = vi
+    editor = vi
     excludesfile = ~/Development/dotfiles/git/gitignore_global
 
 [push]
-	default = tracking
+    default = tracking
 
 [user]
-	name = Torjus Bjåen
-	email = torjus.bjaen@gmail.com
+    name = Torjus Bjåen
+    email = torjus.bjaen@gmail.com
 [diff]
-	algorithm = patience
+    algorithm = patience

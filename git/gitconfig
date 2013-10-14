@@ -7,6 +7,10 @@
     last = log -1 HEAD
     hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     prune-local = !git branch --merged | grep -v \"^\\*\" | xargs git branch -d
+    stats = shortlog -sne
+    whatsnew = log HEAD@{1}..
+    incoming = "!git remote update -p; git log ..@{u}"
+    outgoing = log @{u}..
 
 [color]
     ui = auto

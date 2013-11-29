@@ -27,6 +27,7 @@ set guioptions-=rL
 set fillchars=diff:⣿,vert:│
 set listchars=tab:▸\ ,eol:¬
 set backspace=indent,eol,start
+set hlsearch
 
 " Tabs, spaces
 set tabstop=4

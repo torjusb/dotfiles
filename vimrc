@@ -95,12 +95,12 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
-augroup gitcommit
+augroup Gitcommit
     au!
 
-    set spell
-    set textwidth=80
-augroup end
+    au FileType gitcommit set spell
+    au FileType gitcommit set textwidth=80
+augroup END
 
 " Completion {{{
 
@@ -109,8 +109,8 @@ let g:SuperTabDefaultCompletionType="context"
 augroup php
     au!
 
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType php call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+    au FileType php set omnifunc=phpcomplete#CompletePHP
+    au FileType php call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 augroup end
 
 set wildmenu

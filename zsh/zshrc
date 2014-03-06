@@ -27,3 +27,7 @@ autoload -U colors && colors
 
 # LESS: Find result 4 lines from top
 alias less="less -j 4"
+
+mountez () {
+    mkdir -p /Volumes/MountEZ && sshfs -o no_readahead,noappledouble,nolocalcaches ez:/var/www /Volumes/MountEZ
+}

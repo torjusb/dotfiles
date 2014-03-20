@@ -1,0 +1,18 @@
+-R
+--exclude=var
+--exclude=media
+--exclude=lib
+--exclude=node_modules
+--exclude=.git
+--exclude=*.min.js
+--exclude=*.phtml
+
+--totals=yes
+
+--languages=-html
+
+--langdef=scss
+--langmap=scss:.scss
+--regex-scss=/^[ \t]*\$([^:]+)/\1/v,variable/
+--regex-scss=/^@mixin *([^ \{(]+)/\1/m,mixin/
+--regex-scss=/^@mixin *([^ \{(]+)/\1/f,function/

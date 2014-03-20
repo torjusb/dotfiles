@@ -42,3 +42,4 @@ nbactions.xml
 # Sublime #
 ###########
 .codeintel
+.sublime-grunt.cache

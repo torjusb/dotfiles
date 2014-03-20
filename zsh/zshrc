@@ -19,7 +19,7 @@ export REPORTTIME=5
 export TIMEFMT='
 > %J
 
-  | Time:   [38;5;159m%E[0m total time, %U user time, %S kernel time
+  | Time:   [38;5;159m%*E[0m total time, %U user time, %S kernel time
   | Disk:   [38;5;159m%F[0m major page faults (pages loaded from disk)
   | System: [38;5;159m%P[0m CPU used, [38;5;159m%M[0m KB max memory used'
 
@@ -27,6 +27,7 @@ autoload -U colors && colors
 
 # LESS: Find result 4 lines from top
 alias less="less -j 4"
+alias tails="multitail"
 
 mountez () {
     mkdir -p /Volumes/MountEZ && sshfs -o no_readahead,noappledouble,nolocalcaches ez:/var/www /Volumes/MountEZ

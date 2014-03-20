@@ -28,5 +28,8 @@ ensure_link "pentadactylrc" ".pentadactylrc"
 # Tmux
 ensure_link "tmux.conf"     ".tmux.conf"
 
+# CTags
+ensure_link "ctags"         ".ctags"
+
 # Powerline
 ensure_link "powerline"     ".config/powerline"

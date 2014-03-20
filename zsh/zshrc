@@ -27,3 +27,4 @@ autoload -U colors && colors
 
 # LESS: Find result 4 lines from top
 alias less="less -j 4"
+alias tails="multitail"

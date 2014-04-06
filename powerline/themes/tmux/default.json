@@ -12,7 +12,10 @@
 		"right": [
 			{
 				"name": "uptime",
-				"priority": 50
+				"priority": 50,
+                "args": {
+                    "seconds_format": ""
+                }
 			},
 			{
 				"name": "date",

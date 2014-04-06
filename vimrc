@@ -47,6 +47,11 @@ set winheight=5
 set winminheight=5
 set winheight=999"
 
+" Buffer navigation
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>b :b<Space>
+
 " Shortcut to system clipboard
 nnoremap <leader>c "*
 vnoremap <leader>c "*y<CR>

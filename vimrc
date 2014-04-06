@@ -95,6 +95,8 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
+nnoremap <C-p> :Unite file_rec -auto-preview<cr>
+
 augroup Gitcommit
     au!
 

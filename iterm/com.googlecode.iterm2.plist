@@ -921,11 +921,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>408 527 445 270 0 0 1920 1178 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>90 491 924 485 0 0 1920 1178 </string>
+	<string>-1002 489 924 485 -1920 32 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1920 1174 0 0 1920 1200 </string>
+	<string>0 0 1920 1200 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-650 120 650 504 -1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1504,7 +1504,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1644,11 +1644,20 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.029581176117062569</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>SASS Compile error: \1</string>
+					<key>regex</key>
+					<string>Warning:.+error:(.+)</string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<false/>
 			<key>Use Bright Bold</key>
@@ -2384,6 +2393,8 @@
 			<string>/Users/torjus</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2446,7 +2457,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-03-05T08:06:28Z</date>
+	<date>2014-03-25T23:50:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2456,7 +2467,7 @@
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.16812150180339813</real>
+	<real>0.39835235476493835</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>

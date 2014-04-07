@@ -34,3 +34,9 @@
 [submodule "vim/bundle/vcl-vim-plugin"]
 	path = vim/bundle/vcl-vim-plugin
 	url = https://github.com/smerrill/vcl-vim-plugin.git
+[submodule "vim/bundle/unite"]
+	path = vim/bundle/unite
+	url = https://github.com/Shougo/unite.vim.git
+[submodule "vim/bundle/vim-puppet"]
+	path = vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git

@@ -47,6 +47,8 @@ set winheight=5
 set winminheight=5
 set winheight=999"
 
+noremap <leader><space> :noh<CR>
+
 " Buffer navigation
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>f :bn<CR>

@@ -47,6 +47,8 @@ set winheight=5
 set winminheight=5
 set winheight=999"
 
+noremap <leader><space> :noh<CR>
+
 " Buffer navigation
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>f :bn<CR>
@@ -100,7 +102,7 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
-nnoremap <C-p> :Unite file_rec -auto-preview<cr>
+nnoremap <C-p> :Unite file_rec -auto-preview -start-insert<cr>
 
 augroup Gitcommit
     au!

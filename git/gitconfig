@@ -20,7 +20,7 @@
     excludesfile = ~/Development/dotfiles/git/gitignore_global
 
 [push]
-    default = tracking
+    default = simple
 
 [user]
     name = Torjus Bjåen

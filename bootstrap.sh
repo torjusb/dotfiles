@@ -33,3 +33,6 @@ ensure_link "ctags"         ".ctags"
 
 # Powerline
 ensure_link "powerline"     ".config/powerline"
+
+# Ack
+ensure_link "ackrc"         ".ackrc"

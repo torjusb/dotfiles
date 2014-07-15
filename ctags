@@ -15,4 +15,4 @@
 --langmap=scss:.scss
 --regex-scss=/^[ \t]*\$([^:]+)/\1/v,variable/
 --regex-scss=/^@mixin *([^ \{(]+)/\1/m,mixin/
---regex-scss=/^@mixin *([^ \{(]+)/\1/f,function/
+--regex-scss=/^@function *([^ \{(]+)/\1/f,function/

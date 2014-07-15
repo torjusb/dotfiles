@@ -5,8 +5,6 @@ source ~/share/profile.d/20ezdev.sh
 export PYTHONPATH="$HOME/.config/powerline"
 export PATH="$HOME/Development/dotfiles/bin:$PATH"
 
-zstyle ':completion:*:j:*' use-cache on
-
 fpath+=(~/Development/dotfiles/zsh/prompt ~/local/compdef)
 
 # Source Prezto.

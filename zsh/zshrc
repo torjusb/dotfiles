@@ -1,6 +1,6 @@
 export PYTHONPATH="$HOME/.config/powerline"
-export PATH="$HOME/Development/dotfiles/bin:$PATH"
 export GOPATH="$HOME/Development/Go"
+export PATH="$HOME/Development/dotfiles/bin:/usr/local/share/python:$PATH"
 
 fpath+=(~/Development/dotfiles/zsh/prompt)
 

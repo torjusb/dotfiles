@@ -5,6 +5,8 @@ syntax on
 colorscheme badwolf
 
 " Phatogen
+let g:pathogen_disabled = ['syntastic']
+
 call pathogen#infect()
 call pathogen#helptags() " Make :help work for bundles
 

@@ -102,7 +102,9 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
-nnoremap <C-p> :Unite file_rec -auto-preview -start-insert<cr>
+nnoremap <C-p> :Unite file_rec -auto-preview -start-insert -resume<cr>
+nnoremap <C-i> :Unite buffer -auto-preview -start-insert -resume<cr>
+call unite#custom#source('file_rec', 'ignore_pattern', 'node_modules')
 
 augroup Gitcommit
     au!

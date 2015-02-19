@@ -36,3 +36,6 @@ ensure_link "powerline"     ".config/powerline"
 
 # Ack
 ensure_link "ackrc"         ".ackrc"
+
+# ESLint
+ensure_link "eslintrc"		".eslintrc"

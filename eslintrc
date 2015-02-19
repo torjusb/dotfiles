@@ -1,0 +1,16 @@
+{
+    "env": {
+        "browser": true
+    },
+    "ecmaFeatures": {
+        "blockBindings": true,
+        "forOf": true,
+        "jsx": true,
+        "templateStrings": true,
+        "arrowFunctions": true
+    },
+    "rules": {
+        "semi": 2
+    }
+}
+

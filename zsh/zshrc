@@ -27,8 +27,8 @@ export TIMEFMT='
 
 autoload -U colors && colors
 
-# LESS: Find result 4 lines from top
-alias less="less -j 4"
+alias less="less -j 4" # LESS: Find result 4 lines from top
 alias tails="multitail"
 alias json="python -m json.tool"
-
+alias bower="bower --allow-root"
+alias colors="pygmentize -O encoding=utf-8 -O style=monokai -g"

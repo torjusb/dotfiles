@@ -1,3 +1,4 @@
+--type-add=csv=csv
 --type-add=html=tpl,phtml,twig
 --type-add=css=scss
 --type-set=ini=.ini,.ini.append.php

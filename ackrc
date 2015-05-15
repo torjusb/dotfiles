@@ -6,3 +6,4 @@
 --type-set=drupal=.info,.module,.features.inc,.inc
 --smart-case
 --ignore-file=is:.tags
+--ignore-file=ext:scssc

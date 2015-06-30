@@ -8,22 +8,16 @@
  * http://www.lesscss.org
  */
 
-.tree-view {
+@import "variables";
 
-}
-
-.editor {
-
-}
-
-.punctuation.definition.variable.php {
-    color: inherit;
-}
-.meta.function-call.object.php {
-    color: #81A2BE;
-}
-
-.trailing-whitespace {
-//    border-bottom: 1px dotted red;
-    color: red;
+atom-text-editor::shadow .source.js {
+    .variable.parameter {
+        color: @magenta;
+    }
+    .entity.name {
+        color: @yellow;
+    }
+    .unquoted.label {
+        color: @base01;
+    }
 }

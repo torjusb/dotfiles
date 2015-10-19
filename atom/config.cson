@@ -9,26 +9,56 @@
     userId: "61f6c9706454250c5f1412f9deba0d93be0034d2"
   editor:
     fontFamily: "Menlo"
-    fontSize: 13
     showIndentGuide: true
     nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
     tabLength: 4
     invisibles: {}
+    showInvisibles: true
+    tabType: "soft"
+    fontSize: 13
   core:
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
+    ignoredNames: [
+      "node_modules"
+    ]
     disabledPackages: [
-      "vim-mode"
+      "git-blame-plus"
     ]
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: true
   linter:
     showErrorInline: true
+    lintOnFly: false
   "linter-golint":
     golintExecutablePath: "/Users/torjus/Development/Go/bin/golint"
   "go-plus":
     formatTool: "gofmt"
   react: {}
-  "language-babel": {}
+  "language-babel":
+    suppressTranspileOnSaveMessages: true
+    transpileOnSave: true
+  "project-manager": {}
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+    ]
+    preserveLastSearch: true
+  "git-blame": {}
+  "file-types":
+    gan: "text.html.php"
+  "linter-php":
+    executablePath: "/usr/bin/php"
+  tabs:
+    usePreviewTabs: true
+  whitespace:
+    ensureSingleTrailingNewline: false
+  "tree-view": {}
+".babel.regexp.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+".js.jsx.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"

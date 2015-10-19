@@ -34,5 +34,5 @@ alias tails="multitail"
 alias json="python -m json.tool"
 
 mountez () {
-    mkdir -p /Volumes/MountEZ && sshfs -o no_readahead,noappledouble,nolocalcaches ez:/var/www /Volumes/MountEZ
+    mkdir -p /Volumes/MountEZ && sshfs -o no_readahead,noappledouble,auto_cache,reconnect ez:/var/www /Volumes/MountEZ
 }

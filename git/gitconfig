@@ -27,3 +27,7 @@
     email = torjus.bjaen@gmail.com
 [diff]
     algorithm = patience
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

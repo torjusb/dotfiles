@@ -5,6 +5,8 @@ syntax on
 colorscheme badwolf
 
 " Phatogen
+let g:pathogen_disabled = ['syntastic']
+
 call pathogen#infect()
 call pathogen#helptags() " Make :help work for bundles
 
@@ -110,7 +112,9 @@ vnoremap > >gv
 "set ttimeout
 "set ttimeoutlen=100
 
-nnoremap <C-p> :Unite file_rec -auto-preview -start-insert<cr>
+nnoremap <C-p> :Unite file_rec -auto-preview -start-insert -resume<cr>
+nnoremap <C-i> :Unite buffer -auto-preview -start-insert -resume<cr>
+call unite#custom#source('file_rec', 'ignore_pattern', 'node_modules')
 
 augroup Gitcommit
     au!
@@ -167,18 +171,29 @@ augroup END
 
 " }}}
 
-" Enable bracketed paste mode
-" https://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
-if &term =~ "xterm.*"
-    let &t_ti = &t_ti . "\e[?2004h"
-    let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
-    endfunction
-    map <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
-    cmap <Esc>[200~ <nop>
-    cmap <Esc>[201~ <nop>
-endif
+" Enable bracketed paste mode {{{
+" https://coderwall.com/p/if9mda
+
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" }}}

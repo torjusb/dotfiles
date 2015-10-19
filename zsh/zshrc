@@ -4,6 +4,8 @@ export VISUAL=vim
 export PYTHONPATH="$HOME/.config/powerline"
 export PATH="$HOME/Development/dotfiles/bin:$PATH"
 
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+
 fpath+=(~/Development/dotfiles/zsh/prompt)
 
 # Source Prezto.

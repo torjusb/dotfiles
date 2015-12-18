@@ -37,3 +37,4 @@ alias less="less -j 4" # LESS: Find result 4 lines from top
 alias tails="multitail"
 alias bower="bower --allow-root"
 alias colors="pygmentize -O encoding=utf-8 -O style=monokai -g"
+alias ag="ag --path-to-agignore=$HOME/Development/dotfiles/agignore"

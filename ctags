@@ -1,13 +1,16 @@
 -R
 --exclude=var
 --exclude=media
---exclude=lib
 --exclude=node_modules
 --exclude=.git
 --exclude=*.min.js
 --exclude=*.phtml
+--exclude="*/_*cache/*"
+--exclude="*/_*logs{0,1}/*"
+--exclude="*/_*data/*"
 
 --totals=yes
+--tag-relative=yes
 
 --languages=-html
 
@@ -17,3 +20,9 @@
 --regex-scss=/^@mixin *([^ \{(]+)/\1/m,mixin/
 --regex-scss=/^@function *([^ \{(]+)/\1/f,function/
 --regex-scss=/^%+([^ \{(]+)/\1/d,definition/
+
+--PHP-kinds=+cf
+--regex-PHP=/abstract class ([^ ]*)/\1/c/
+--regex-PHP=/interface ([^ ]*)/\1/c/
+--regex-PHP=/trait ([^ ]*)/\1/c/
+--regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/

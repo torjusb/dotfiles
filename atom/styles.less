@@ -8,18 +8,25 @@
  * http://www.lesscss.org
  */
 
-@import "variables";
+//@import "variables";
+@import "colors";
 
 atom-text-editor::shadow {
     .source.js {
         .variable.parameter {
-            color: @magenta;
+            //color: @magenta;
         }
         .entity.name {
-            color: @yellow;
+            //color: @yellow;
         }
         .unquoted.label {
-            color: @base01;
+            //color: @base01;
+        }
+    }
+
+    .source.php {
+        .punctuation.definition.variable.php {
+            color: inherit;
         }
     }
 

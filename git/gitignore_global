@@ -1,6 +1,10 @@
 .tags
+tags
+.tags*
 .tags_sorted_by_file
 .ackrc
+.sync-config.cson
+.tern-project
 
 # Komodo generated files #
 ##########################

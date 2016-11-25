@@ -1,64 +1,134 @@
 "*":
-  "exception-reporting":
-    userId: "7ebd11e4-7449-ba6c-2582-a21b08a11f60"
-  "release-notes":
-    viewedVersion: "0.93.0"
-  welcome:
-    showOnStartup: false
-  metrics:
-    userId: "61f6c9706454250c5f1412f9deba0d93be0034d2"
-  editor:
-    fontFamily: "Menlo"
-    showIndentGuide: true
-    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
-    tabLength: 4
-    invisibles: {}
-    showInvisibles: true
-    tabType: "soft"
-    fontSize: 13
+  "atom-ctags":
+    cmd: "/usr/local/bin/ctags"
+  "atom-ternjs": {}
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: true
   core:
-    themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
+    disabledPackages: [
+      "git-blame-plus"
+      "nuclide-remote-projects"
+      "symbols-view"
+      "language-javascript-jsx"
+      "language-varnish"
+      "react"
+      "file-type-icons"
     ]
     ignoredNames: [
       "node_modules"
     ]
-    disabledPackages: [
-      "git-blame-plus"
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "duotone-dark-syntax"
     ]
-  "autocomplete-plus":
-    includeCompletionsFromAllBuffers: true
-  linter:
-    showErrorInline: true
-    lintOnFly: false
-  "linter-golint":
-    golintExecutablePath: "/Users/torjus/Development/Go/bin/golint"
-  "go-plus":
-    formatTool: "gofmt"
-  react: {}
-  "language-babel":
-    suppressTranspileOnSaveMessages: true
-    transpileOnSave: true
-  "project-manager": {}
+    useCustomTitleBar: true
+  "duotone-dark-syntax":
+    color:
+      duo: "#fdc28c"
+      uno: "#ad94eb"
+  editor:
+    fontFamily: "Operator Mono"
+    invisibles: {}
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    scrollSensitivity: 50
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapHangingIndent: 4
+    tabLength: 4
+  "exception-reporting":
+    userId: "7ebd11e4-7449-ba6c-2582-a21b08a11f60"
+  "file-icons":
+    onChanges: true
+    tabPaneIcon: false
+  "file-types":
+    gan: "text.html.php"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
   "fuzzy-finder":
     ignoredNames: [
       "node_modules"
     ]
     preserveLastSearch: true
   "git-blame": {}
-  "file-types":
-    gan: "text.html.php"
+  "go-plus":
+    formatTool: "gofmt"
+  "highlight-selected": {}
+  "language-babel":
+    suppressTranspileOnSaveMessages: true
+    transpileOnSave: true
+  linter:
+    errorPanelHeight: 69
+    lintOnFly: false
+    showErrorInline: true
+  "linter-golint":
+    golintExecutablePath: "/Users/torjus/Development/Go/bin/golint"
   "linter-php":
     executablePath: "/usr/bin/php"
+  metrics:
+    userId: "61f6c9706454250c5f1412f9deba0d93be0034d2"
+  "one-dark-ui": {}
+  "project-manager": {}
+  "r-exec":
+    whichApp: "iTerm"
+  react: {}
+  "release-notes":
+    viewedVersion: "0.93.0"
   tabs:
+    enableVcsColoring: true
     usePreviewTabs: true
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
-  "tree-view": {}
+    removeTrailingWhitespace: false
+".ansi.text":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    softWrapHangingIndent: 4
+".attribute-values.js.jsx.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
 ".babel.regexp.source":
   editor:
     nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+".coffee.jsx.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+".editorconfig.source":
+  editor:
+    autoIndent: false
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+    tabLength: 4
+".hack.html.text":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    softWrapHangingIndent: 4
+".hackfragment.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    softWrapHangingIndent: 4
+".js.jsx.react.source":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
 ".js.jsx.source":
   editor:
     nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+".js.source.subtlegradient":
+  editor:
+    nonWordCharacters: "./\\()\"':,.;<>~!@#%$^&*|+=[]{}`~?-"
+    preferredLineLength: 100
+    softWrapHangingIndent: 4

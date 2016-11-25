@@ -18,3 +18,11 @@
 
 'body':
     'ctrl-s': 'tree-view:toggle'
+
+'.platform-darwin atom-workspace':
+    'ctrl-cmd-t': 'platformio-ide-terminal:toggle'
+    'shift-cmd-t': 'pane:reopen-closed-item'
+
+'atom-text-editor':
+    'alt-delete': 'editor:delete-to-next-word-boundary'
+    'alt-backspace': 'editor:delete-to-previous-word-boundary'

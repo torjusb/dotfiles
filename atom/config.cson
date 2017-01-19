@@ -10,9 +10,10 @@
       "nuclide-remote-projects"
       "symbols-view"
       "language-javascript-jsx"
+      "file-type-icons"
       "language-varnish"
       "react"
-      "file-type-icons"
+      "atom-ternjs"
     ]
     ignoredNames: [
       "node_modules"
@@ -53,6 +54,9 @@
     ]
     preserveLastSearch: true
   "git-blame": {}
+  "git-plus":
+    general:
+      _analyticsUserId: "e69c4592-7829-412c-aecd-e5ad279cfc38"
   "go-plus":
     formatTool: "gofmt"
   "highlight-selected": {}
@@ -76,6 +80,7 @@
   react: {}
   "release-notes":
     viewedVersion: "0.93.0"
+  "status-bar": {}
   tabs:
     enableVcsColoring: true
     usePreviewTabs: true

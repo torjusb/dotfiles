@@ -1,6 +1,0 @@
-acme_useless_homepage:
-    pattern:  /hello/{name}
-    defaults: 
-        _controller: AcmeUselessBundle:Default:index
-        name: "stranger"
-    

@@ -8,19 +8,22 @@
  * http://www.lesscss.org
  */
 
-//@import "variables";
-@import "colors";
+atom-text-editor.editor {
 
-atom-text-editor::shadow {
-    .source.js {
-        .variable.parameter {
-            //color: @magenta;
-        }
-        .entity.name {
-            //color: @yellow;
-        }
-        .unquoted.label {
-            //color: @base01;
+    // Original duotone-dark-syntax 1.0.0 colors
+    --uno-1: hsl(250, 100%, 100%);
+    --uno-2: hsl(250, 98%, 86%);
+    --uno-3: hsl(250, 96%, 78%);
+    --uno-4: hsl(250, 12%, 46%);
+    --uno-5: hsl(250, 12%, 46%);
+
+    --duo-1: hsl(30, 100%, 80%);
+    --duo-2: hsl(30, 72%, 62%);
+    --duo-3: hsl(30, 6%, 46%);
+
+    .syntax--js {
+        &.syntax--support, &.syntax--variable {
+            color: var(--uno-2);
         }
     }
 

@@ -8,7 +8,6 @@
     disabledPackages: [
       "git-blame-plus"
       "nuclide-remote-projects"
-      "symbols-view"
       "language-javascript-jsx"
       "file-type-icons"
       "language-varnish"
@@ -23,7 +22,7 @@
       "one-dark-ui"
       "duotone-dark-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "hidden"
   "duotone-dark-syntax":
     color:
       duo: "#fdc28c"
@@ -39,6 +38,7 @@
     softWrap: true
     softWrapHangingIndent: 4
     tabLength: 4
+  "elm-format": {}
   "exception-reporting":
     userId: "7ebd11e4-7449-ba6c-2582-a21b08a11f60"
   "file-icons":
@@ -53,7 +53,11 @@
       "node_modules"
     ]
     preserveLastSearch: true
-  "git-blame": {}
+  "git-blame":
+    columnWidth: 359
+    customCommitUrlTemplateString: "https://stash.wimpmusic.com/projects/<%- project %>/repos/<%- repo %>/commits/<%- revision %>"
+    ignoreWhiteSpaceDiffs: true
+    useCustomUrlTemplateIfStandardRemotesFail: true
   "git-plus":
     general:
       _analyticsUserId: "e69c4592-7829-412c-aecd-e5ad279cfc38"
@@ -63,25 +67,35 @@
   "language-babel":
     suppressTranspileOnSaveMessages: true
     transpileOnSave: true
-  linter:
-    errorPanelHeight: 69
-    lintOnFly: false
-    showErrorInline: true
+  "language-elm": {}
+  linter: {}
   "linter-golint":
     golintExecutablePath: "/Users/torjus/Development/Go/bin/golint"
   "linter-php":
     executablePath: "/usr/bin/php"
+  "linter-ui-default": {}
   metrics:
     userId: "61f6c9706454250c5f1412f9deba0d93be0034d2"
   "one-dark-ui": {}
+  "platformio-ide-terminal":
+    core: {}
+    style:
+      theme: "one-dark"
   "project-manager": {}
   "r-exec":
     whichApp: "iTerm"
   react: {}
   "release-notes":
     viewedVersion: "0.93.0"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
   "status-bar": {}
   tabs:
+    enableMruTabSwitching: false
     enableVcsColoring: true
     usePreviewTabs: true
   "tree-view": {}

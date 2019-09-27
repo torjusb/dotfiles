@@ -4,6 +4,12 @@ set nocompatible
 syntax on
 colorscheme badwolf
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'machakann/vim-highlightedyank'
+
+call plug#end()
+
 " Phatogen
 let g:pathogen_disabled = ['syntastic']
 

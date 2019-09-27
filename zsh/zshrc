@@ -1,6 +1,8 @@
 export EDITOR=vim
 export VISUAL=vim
 
+export HOMEBREW_GITHUB_API_TOKEN="48ad8ee7ff5aabebf9287d04ebc241942530a695"
+
 export PYTHONPATH="$HOME/.config/powerline"
 export GOPATH="$HOME/Development/Go"
 export PATH="$HOME/Development/dotfiles/bin:/usr/local/share/python:$PATH"
@@ -13,11 +15,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:/usr/local/opt/ruby/bin"
 export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/tizen-studio/tools/ide/bin"
+export PATH="$PATH:$HOME/tizen-studio/emulator/bin"
+export PATH="$PATH:$HOME/tizen-studio/tools"
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
@@ -38,3 +44,7 @@ alias tails="multitail"
 alias json="python -m json.tool"
 alias bower="bower --allow-root"
 alias colors="pygmentize -O encoding=utf-8 -O style=monokai -g"
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/torjus/.nvm/versions/node/v10.11.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/torjus/.nvm/versions/node/v10.11.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh

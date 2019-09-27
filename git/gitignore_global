@@ -5,6 +5,8 @@ tags
 .ackrc
 .sync-config.cson
 .tern-project
+_TODO_.mdown
+.vscode
 
 # Komodo generated files #
 ##########################
@@ -27,7 +29,6 @@ tags
 ######################
 .DS_Store
 ehthumbs.db
-Icon?
 Thumbs.db
 .*.swp
 

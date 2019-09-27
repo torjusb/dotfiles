@@ -7,36 +7,41 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
-atom-text-editor.editor {
+// atom-text-editor.editor {
+//
+//     // Original duotone-dark-syntax 1.0.0 colors
+//     --uno-1: hsl(250, 100%, 100%);
+//     --uno-2: hsl(250, 98%, 86%);
+//     --uno-3: hsl(250, 96%, 78%);
+//     --uno-4: hsl(250, 12%, 46%);
+//     --uno-5: hsl(250, 12%, 46%);
+//
+//     --duo-1: hsl(30, 100%, 80%);
+//     --duo-2: hsl(30, 72%, 62%);
+//     --duo-3: hsl(30, 6%, 46%);
+//
+//     .syntax--js {
+//         &.syntax--support, &.syntax--variable {
+//             color: var(--uno-2);
+//         }
+//     }
+//
+//     .syntax--jsx.syntax--component {
+//         color: var(--uno-3);
+//     }
+//
+//     .source.php {
+//         .punctuation.definition.variable.php {
+//             color: inherit;
+//         }
+//     }
+//
+//     .highlights .highlight-selected .region {
+//         border-color: rgba(255, 255, 255, .2);
+//     }
+// }
 
-    // Original duotone-dark-syntax 1.0.0 colors
-    --uno-1: hsl(250, 100%, 100%);
-    --uno-2: hsl(250, 98%, 86%);
-    --uno-3: hsl(250, 96%, 78%);
-    --uno-4: hsl(250, 12%, 46%);
-    --uno-5: hsl(250, 12%, 46%);
-
-    --duo-1: hsl(30, 100%, 80%);
-    --duo-2: hsl(30, 72%, 62%);
-    --duo-3: hsl(30, 6%, 46%);
-
-    .syntax--js {
-        &.syntax--support, &.syntax--variable {
-            color: var(--uno-2);
-        }
-    }
-
-    .syntax--jsx.syntax--component {
-        color: var(--uno-3);
-    }
-
-    .source.php {
-        .punctuation.definition.variable.php {
-            color: inherit;
-        }
-    }
-
-    .highlights .highlight-selected .region {
-        border-color: rgba(255, 255, 255, .2);
-    }
+@font-size: 18px;
+html, body, .tree-view, .tab-bar .tab {
+  font-size: @font-size;
 }

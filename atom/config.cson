@@ -5,6 +5,18 @@
   "autocomplete-plus":
     includeCompletionsFromAllBuffers: true
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "git-blame-plus"
       "nuclide-remote-projects"
@@ -13,6 +25,7 @@
       "language-varnish"
       "react"
       "atom-ternjs"
+      "tree-view"
     ]
     ignoredNames: [
       "node_modules"

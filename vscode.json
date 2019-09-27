@@ -1,0 +1,80 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "workbench.iconTheme": "vs-seti",
+  "editor.fontLigatures": true,
+  "workbench.colorCustomizations": {
+    "terminal.ansiRed": "#bf6263"
+  },
+  "editor.rulers": [80],
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.tabSize": 2,
+  "window.zoomLevel": 2,
+  "editor.scrollBeyondLastLine": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "editor.overviewRulerLanes": 3,
+  "workbench.activityBar.visible": true,
+  "flow.runOnEdit": false,
+  "flow.useNPMPackagedFlow": true,
+  "files.autoSave": "off",
+  "flow.pathToFlow": "/Users/torjus/.config/yarn/global/node_modules/.bin/flow",
+  "terminal.integrated.fontFamily": "Menlo",
+  "css.validate": true,
+  "terminal.integrated.fontSize": 12,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.keymap": "alternate",
+  "search.location": "sidebar",
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "eslint.autoFixOnSave": false,
+  "eslint.options": {
+    "rules": {
+      "no-debugger": "off"
+    }
+  },
+  "gitlens.mode.active": "zen",
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideActivityBar": false,
+  "eslint.packageManager": "yarn",
+  "npm.enableScriptExplorer": true,
+  "flow.useLSP": true,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "workbench.fontAliasing": "antialiased",
+  "editor.fontFamily": "'Cascadia Code','Operator Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontWeight": "500",
+  "files.exclude": {
+    "**/*.app": true,
+    "**/*.css.flow": true,
+    "**/*.dll": true,
+    "**/node_modules": true,
+    "**/yarn-error.log": true,
+    "npm-packages-offline-cache": true
+  },
+  "reason_language_server.per_value_codelens": true,
+  "prettier.disableLanguages": ["css"],
+  "gitlens.views.repositories.files.layout": "list",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "tslint.alwaysShowStatus": true,
+  "typescript.format.enable": false,
+  "search.exclude": {
+    "**/webdriver-tests": true
+  },
+  "editor.smoothScrolling": true,
+  "breadcrumbs.enabled": false,
+  "cSpell.allowCompoundWords": true,
+  "editor.fontSize": 14
+}

@@ -157,9 +157,9 @@ set wildignore+=*.orig " Merge resolution files
 
 " Backups {{{
 
-set undodir=~/.vim/tmp/undo// " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap// " swap files
+"set undodir=~/.vim/tmp/undo// " undo files
+"set backupdir=~/.vim/tmp/backup// " backups
+"set directory=~/.vim/tmp/swap// " swap files
 set noswapfile " It's 2012, Vim.
 " Vagrant NFS shared folder doesn't like it?!
 "set backup " enable backups

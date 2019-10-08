@@ -1,17 +1,14 @@
 set -g fish_user_abbreviations
 abbr --add g 'git'
-#set -U fish_user_abbreviations $fish_user_abbreviations 'g=git'
-#set -U fish_user_abbreviations $fish_user_abbreviations 'less=less -j 4'
+abbr --add fb 'firebase'
 
-set -x LC_ALL en_US.UTF-8
+if status --is-interactive
+    set -g fish_user_abbreviations
+    abbr --add g 'git'
+    abbr --add c 'cargo'
+end
 
-set PATH $HOME/.config/yarn/global/node_modules/.bin $PATH
-set PATH $HOME/tizen-studio/tools/ide/bin $PATH
-set PATH $HOME/tizen-studio/emulator/bin $PATH
-set PATH $HOME/tizen-studio/tools $PATH
-set PATH $PATH /usr/local/share/npm/bin
-set PATH $PATH /usr/local/opt/ruby/bin
-set PATH $PATH /usr/local/lib/python2.7/site-packages
+set PATH $PATH ~/.cargo/bin
 
 function nvm
    bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
@@ -22,5 +19,21 @@ set -x NVM_DIR ~/.nvm
 set __fish_git_prompt_showuntrackedfiles 'yes'
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate ''
-set __fish_git_prompt_showupstream 'none'
+set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_describe_style 'branch'
 set -g fish_prompt_pwd_dir_length 3
+
+function fish_prompt
+    if test -n "$SSH_TTY"
+        echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
+    end
+
+    echo -n (set_color blue)(prompt_pwd)(set_color yellow)(__fish_git_prompt)' '
+
+    set_color -o
+    if test "$USER" = 'root'
+        echo -n (set_color red)'# '
+    end
+    echo -n (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
+    set_color normal
+end

@@ -12,15 +12,13 @@
     incoming = "!git remote update -p; git log ..@{u}"
     outgoing = log @{u}..
     start = !sh -c 'git fetch && git checkout -b $0 origin/$0'
-    create-pull-request = !sh -c 'stash pull-request $0 $@'
-    pr = !sh -c 'stash pull-request $0 @eirik.sletteberg @hafsteinn.ingason @jeremy.karlsson @o.smestad @bartosz.cytrowski @"michael.enger@tidal.com" @"torjus.bjaen@tidal.com"'
 
 [color]
     ui = auto
 
 [core]
-    editor = vi
-    excludesfile = /Users/torjus/Development/dotfiles/git/gitignore_global
+    editor = nvim
+    excludesfile = ~/Development/dotfiles/git/gitignore_global
 
 [push]
     default = simple
@@ -30,11 +28,11 @@
 	email = torjus.bjaen@tidal.com
 [diff]
     algorithm = patience
+
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[commit]
-	template = /Users/torjus/.stCommitMsg
+
 [diff-so-fancy]
 	markEmptyLines = false

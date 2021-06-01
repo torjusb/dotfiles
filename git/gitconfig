@@ -36,3 +36,5 @@
 
 [diff-so-fancy]
 	markEmptyLines = false
+[pull]
+	ff = only

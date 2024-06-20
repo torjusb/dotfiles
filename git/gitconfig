@@ -14,18 +14,21 @@
     start = !sh -c 'git fetch && git checkout -b $0 origin/$0'
 
 [color]
-    ui = auto
+	ui = true
 
 [core]
     editor = nvim
     excludesfile = ~/Development/dotfiles/git/gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
     default = simple
+	autoSetupRemote = true
 
 [user]
-	name = Torjus Bjåen
-	email = torjus.bjaen@tidal.com
+	name = Torjus Bjåen
+	email = torjus.bjaaen@try.no
+
 [diff]
     algorithm = patience
 
@@ -38,3 +41,21 @@
 	markEmptyLines = false
 [pull]
 	ff = only
+[interactive]
+	diffFilter = diff-so-fancy --patch
+#	diffFilter = /opt/homebrew/bin/diff-so-fancy --patch
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red
+	new = green
+	whitespace = red reverse
+[init]
+	defaultBranch = main

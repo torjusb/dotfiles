@@ -48,3 +48,8 @@ alias colors="pygmentize -O encoding=utf-8 -O style=monokai -g"
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/torjus/.nvm/versions/node/v10.11.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/torjus/.nvm/versions/node/v10.11.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+PATH=~/.console-ninja/.bin:$PATH

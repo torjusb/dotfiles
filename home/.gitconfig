@@ -13,46 +13,30 @@
   outgoing = log @{u}..
   start = !sh -c 'git fetch && git checkout -b $0 origin/$0'
 
-[color]
-	ui = true
+[user]
+  name = Torjus Bjåen
+  email = torjus.bjaaen@try.no
 
 [core]
   editor = nvim
-	hooksPath = /Users/torjus/.config/git/hooks
-	excludesfile = ~/.config/gitignore_global
-#  pager = delta
+  hooksPath = ~/.config/git/hooks
+  excludesfile = ~/.config/gitignore_global
+
+[color]
+  ui = true
 
 [push]
   default = simple
-	autoSetupRemote = true
-
-[user]
-	name = Torjus Bjåen
-	email = torjus.bjaaen@try.no
-
-[diff]
-  algorithm = patience
-
-[filter "lfs"]
-#	clean = git-lfs clean %f
-#	smudge = git-lfs smudge %f
-#	required = true
-
-[diff-so-fancy]
-	markEmptyLines = false
+  autoSetupRemote = true
 
 [pull]
-	ff = only
-
-[interactive]
-	diffFilter = diff-highlight
-#  diffFilter = delta --color-only
+  ff = only
 
 [merge]
-  #conflictstyle = diff3
-  conflictstyl = zdiff3
+  conflictstyle = zdiff3
 
 [diff]
+  algorithm = histogram
   colorMoved = default
 
 [include]
@@ -60,8 +44,8 @@
 
 [delta]
   navigate = true
-  #syntax-theme =arctic-fox
-#  syntax-them = ansi
-  features = collared-trogon
   dark = true
-#  syntax-theme = arctic-fox
+  features = collared-trogon
+
+[interactive]
+  diffFilter = diff-highlight

@@ -1,52 +1,23 @@
-.tags
-tags
-.tags*
-.tags_sorted_by_file
-.ackrc
-.sync-config.cson
-.tern-project
-_TODO_.mdown
-.vscode
-
-.tmp/
-
-# Komodo generated files #
-##########################
-*.komodoproject
-
-# Zsh generated files #
-#######################
-.zcache
-
-# Coda generated file #
-#######################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 ._*
 
-# PhpStorm generated files #
-############################
-.idea
-.idae/*
+# Editor swap / backup files
+*.swp
+*.swo
+*~
 
-# OS generated files #
-######################
-.DS_Store
-ehthumbs.db
-Thumbs.db
-.*.swp
+# ctags
+tags
+.tags
+.tags*
 
-# Aptana generated files #
-##########################
-.buildpath
-.project
-.settings/
+# direnv
+.direnv/
+.envrc.local
 
-# Netbeans generated files #
-############################
-nbproject/
-nbactions.xml
-
-
-# Sublime #
-###########
-.codeintel
-.sublime-grunt.cache
+# Environment / secrets that should never be committed
+.env.local
+.env.*.local

@@ -1,7 +1,0 @@
---type-add=html=tpl,phtml,twig
---type-add=css=scss
---type-set=ini=.ini,.ini.append.php
---type-set=vcl=.vcl
---type-set=drupal=.info,.module,.features.inc,.inc
---smart-case
---ignore-file=is:.tags

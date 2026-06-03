@@ -1,0 +1,28 @@
+add_newline = false
+
+[line_break]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+
+[directory.substitutions]
+"~/Development" = "Dev"
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[git_branch]
+truncation_length = 30
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true

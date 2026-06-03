@@ -1,0 +1,1 @@
+source "/Users/torjus/.deno/env.fish"

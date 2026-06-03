@@ -1,3 +1,9 @@
-pentadactyl/info/*
-.netrwhist
-vim/tmp
+# Backups created by bootstrap.sh
+*.bak
+
+# macOS
+.DS_Store
+
+# nvim runtime/state (lazy-lock.json IS tracked, on purpose)
+home/.config/nvim/.tests
+home/.config/nvim/doc/tags

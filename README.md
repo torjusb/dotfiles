@@ -20,11 +20,12 @@ under `home/` mirrors its location in `$HOME` and is symlinked into place by
 ## Install
 
 ```sh
-./bootstrap.sh
+brew bundle --file=Brewfile   # install Homebrew CLIs + VS Code extensions
+./bootstrap.sh                # symlink configs into $HOME
 ```
 
-Symlinks each tracked path into `$HOME`. Any existing real file is moved to
-`<name>.bak` first; re-running is idempotent.
+`bootstrap.sh` symlinks each tracked path into `$HOME`. Any existing real file
+is moved to `<name>.bak` first; re-running is idempotent.
 
 Then:
 
@@ -32,6 +33,8 @@ Then:
 fisher update   # install fish plugins listed in fish_plugins
 nvim            # let lazy.nvim sync plugins on first launch
 ```
+
+Regenerate the `Brewfile` after installing new tools with `brew bundle dump --force`.
 
 ## Notes
 

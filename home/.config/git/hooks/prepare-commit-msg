@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# prepare-commit-msg: prefill the commit editor from $GIT_DIR/PREP_COMMIT_MSG if present.
+# Used by the prep-commit Claude Code skill. One-shot: the prep file is consumed on use.
+
+set -eu
+
+COMMIT_MSG_FILE="$1"
+SOURCE="${2:-}"
+
+# Only act when git would otherwise produce an empty/template message.
+# Skip when SOURCE is set: message (-m/-F), template (-t), merge, squash, or commit (-c/-C/--amend).
+if [ -n "$SOURCE" ]; then
+  exit 0
+fi
+
+GIT_DIR="$(git rev-parse --git-dir)"
+PREP_FILE="$GIT_DIR/PREP_COMMIT_MSG"
+
+if [ ! -f "$PREP_FILE" ]; then
+  exit 0
+fi
+
+# Prepend the drafted message above git's existing template (which holds the # status comments).
+TMP="$(mktemp)"
+cat "$PREP_FILE" > "$TMP"
+cat "$COMMIT_MSG_FILE" >> "$TMP"
+mv "$TMP" "$COMMIT_MSG_FILE"
+rm -f "$PREP_FILE"

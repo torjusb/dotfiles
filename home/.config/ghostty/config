@@ -1,0 +1,14 @@
+fullscreen = false
+macos-non-native-fullscreen = false
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+theme = OneHalfDark
+palette = 8=#6a758a
+keybind = alt+backspace=text:\x1b\x7f
+# macos-icon=xray
+background-opacity = 0.98
+background-blur = false
+window-save-state = always
+link-url = true
+link-previews = true

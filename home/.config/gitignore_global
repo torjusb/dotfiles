@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor swap / backup files
+*.swp
+*.swo
+*~
+
+# ctags
+tags
+.tags
+.tags*
+
+# direnv
+.direnv/
+.envrc.local
+
+# Environment / secrets that should never be committed
+.env.local
+.env.*.local

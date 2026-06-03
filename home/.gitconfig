@@ -1,0 +1,51 @@
+[alias]
+  co = checkout
+  br = branch
+  ci = commit -v
+  st = status -sb
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  prune-local = !git branch --merged | grep -v \"^\\*\" | xargs git branch -d
+  stats = shortlog -sne
+  whatsnew = log HEAD@{1}..
+  incoming = "!git remote update -p; git log ..@{u}"
+  outgoing = log @{u}..
+  start = !sh -c 'git fetch && git checkout -b $0 origin/$0'
+
+[user]
+  name = Torjus Bjåen
+  email = torjus.bjaaen@try.no
+
+[core]
+  editor = nvim
+  hooksPath = ~/.config/git/hooks
+  excludesfile = ~/.config/gitignore_global
+
+[color]
+  ui = true
+
+[push]
+  default = simple
+  autoSetupRemote = true
+
+[pull]
+  ff = only
+
+[merge]
+  conflictstyle = zdiff3
+
+[diff]
+  algorithm = histogram
+  colorMoved = default
+
+[include]
+  path = ~/.config/delta/themes.gitconfig
+
+[delta]
+  navigate = true
+  dark = true
+  features = collared-trogon
+
+[interactive]
+  diffFilter = diff-highlight

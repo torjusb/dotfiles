@@ -1,49 +1,59 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Symlink everything under home/ into $HOME, mirroring the directory layout.
+#
+# For each tracked file, the script links the *deepest* sensible target:
+#   - top-level dotfiles (e.g. .gitconfig) are linked directly
+#   - self-contained config dirs (fish, nvim, ghostty, git, delta) are linked
+#     as whole directories so the repo owns them outright
+#   - individual files inside shared dirs (.config root, .claude) are linked
+#     per-file so unrelated neighbours are left untouched
+#
+# Existing real files/dirs are backed up to <name>.bak before linking.
+# Re-running is safe: correct links are skipped, stale ones are repointed.
+
+set -euo pipefail
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SRC="$DOTFILES_DIR/home"
 
-mkdir -p ~/.config
-mkdir -p ~/.atom
+# Link whole directories (repo owns the entire dir).
+DIRS=(
+  ".config/fish"
+  ".config/nvim"
+  ".config/ghostty"
+  ".config/git"
+  ".config/delta"
+  ".claude/skills/prep-commit"
+  ".claude/skills/tidslogg"
+)
 
-# From https://github.com/sjl/dotfiles/blob/master/bin/bootstrap.sh
-function ensure_link {
-	    test -L "$HOME/$2" || ln -s "$DOTFILES_DIR/$1" "$HOME/$2"
+# Link individual files (dir is shared with untracked neighbours).
+FILES=(
+  ".gitconfig"
+  ".config/starship.toml"
+  ".config/gitignore_global"
+  ".claude/settings.json"
+  ".claude/statusline-command.sh"
+)
+
+link() {
+  local src="$1" dest="$2"
+  if [ -L "$dest" ]; then
+    [ "$(readlink "$dest")" = "$src" ] && { echo "ok    $dest"; return; }
+    rm "$dest"
+  elif [ -e "$dest" ]; then
+    echo "backup $dest -> $dest.bak"
+    mv "$dest" "$dest.bak"
+  fi
+  mkdir -p "$(dirname "$dest")"
+  ln -s "$src" "$dest"
+  echo "link  $dest"
 }
 
-# Vim
-ensure_link "vim"           ".vim"
-ensure_link "vimrc"         ".vimrc"
+for d in "${DIRS[@]}";  do link "$SRC/$d" "$HOME/$d"; done
+for f in "${FILES[@]}"; do link "$SRC/$f" "$HOME/$f"; done
 
-# Zsh & Prezto
-ensure_link "zsh/zshrc"     ".zshrc"
-ensure_link "zsh/zlogin"    ".zlogin"
-ensure_link "zsh/zpreztorc" ".zpreztorc"
-
-# Git
-ensure_link "git/gitconfig" ".gitconfig"
-
-# Pentadactyl
-ensure_link "pentadactyl"   ".pentadactyl"
-ensure_link "pentadactylrc" ".pentadactylrc"
-
-# Tmux
-ensure_link "tmux.conf"     ".tmux.conf"
-
-# CTags
-ensure_link "ctags"         ".ctags"
-
-# Powerline
-ensure_link "powerline"     ".config/powerline"
-
-# Ack
-ensure_link "ackrc"         ".ackrc"
-
-# ESLint
-ensure_link "eslintrc"		".eslintrc"
-
-# Atom
-ensure_link "atom/init.cson"		".atom/init.cson"
-ensure_link "atom/config.cson"		".atom/config.cson"
-ensure_link "atom/keymap.cson"		".atom/keymap.cson"
-ensure_link "atom/snippets.cson"	".atom/snippets.cson"
-ensure_link "atom/styles.less"		".atom/styles.less"
+echo
+echo "Done. Reminders:"
+echo "  - fish plugins: run 'fisher update' to install from fish_plugins"
+echo "  - nvim: launch nvim once to let lazy.nvim sync plugins"

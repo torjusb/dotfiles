@@ -1,0 +1,18 @@
+{
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0,
+    "refreshInterval": 10
+  },
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "skipAutoPermissionPrompt": true
+}

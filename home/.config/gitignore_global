@@ -21,3 +21,8 @@ tags
 # Environment / secrets that should never be committed
 .env.local
 .env.*.local
+
+# Claude
+.claude/worktrees/
+.claude/settings.local.json
+.claude/todos/

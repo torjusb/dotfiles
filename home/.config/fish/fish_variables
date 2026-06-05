@@ -14,4 +14,4 @@ SETUVAR _fisher_jethrokuan_2F_z_files:/Users/torjus/\x2econfig/fish/functions/__
 SETUVAR _fisher_plugins:jethrokuan/z\x1eg\x2dplane/pnpm\x2dshell\x2dcompletion
 SETUVAR fish_color_search_match:\x2d\x2dbackground\x3dblue
 SETUVAR fish_emoji_width:2
-SETUVAR fish_user_paths:/Users/torjus/\x2ecomposer/vendor/bin\x1e/Users/torjus/\x2epyenv/shims\x1e/opt/homebrew/bin\x1e/Users/torjus/Library/pnpm\x1e/Users/torjus/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/sbin\x1e/sbin
+SETUVAR fish_user_paths:/Users/torjus/\x2ecomposer/vendor/bin\x1e/opt/homebrew/bin\x1e/Users/torjus/\x2ecodeium/windsurf/bin\x1e/Users/torjus/\x2epyenv/shims\x1e/Users/torjus/Library/pnpm\x1e/Users/torjus/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/sbin\x1e/sbin

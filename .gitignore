@@ -7,3 +7,8 @@
 # nvim runtime/state (lazy-lock.json IS tracked, on purpose)
 home/.config/nvim/.tests
 home/.config/nvim/doc/tags
+
+# Claude Code project-local artifacts (managed dotfiles live under home/.claude/)
+/.claude/worktrees/
+/.claude/settings.local.json
+/.claude/todos/
